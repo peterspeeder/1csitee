@@ -9,7 +9,10 @@
 </head>
 <body>
     <header>
-        <h1>1c</h1>
+        <div class="header-images">
+            <img src="variant-one.png" alt="Variant One" class="active">
+            <img src="variant-two.png" alt="Variant Two">
+        </div>
         <nav>
             <ul>
             
@@ -19,15 +22,15 @@
     <main>
         <div id="content-wrapper">
             <section id="left-content">
-                <iframe width="500" height="300" src="https://www.youtube.com/embed/Dy_XKcpBNvw" 
+                <iframe width="500" height="300" src="https://www.youtube.com/embed/Dy_XKcpBNvw?autoplay=1" 
                         title="YouTube video player" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen></iframe>
             </section>
             <section id="buttons">
-                <a href="#about" class="button">About Us</a>
-                <a href="#forum" class="button">Forum</a>
-                <a href="#game" class="button">Game</a>
+                <img src="about.png" alt="About Us" class="button" onclick="scrollToSection('about')">
+                <img src="forum.png" alt="Forum" class="button" onclick="scrollToSection('forum')">
+                <img src="game.png" alt="Game" class="button" onclick="scrollToSection('game')">
             </section>
         </div>
     </main>
