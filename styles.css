@@ -1,16 +1,42 @@
+/* Your existing CSS styles */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('background1.png'); 
+  background-image: url('background1.png');
   background-repeat: repeat;
-  background-size: 250px 250px; 
+  background-size: 250px 250px;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(1, 0, 0, 0);
   color: white;
   padding: 1rem;
   text-align: center;
+  position: relative;
+}
+
+.header-images {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  overflow: hidden; /* Ensure images do not overflow */
+}
+
+.header-images img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure images take up the full width */
+  height: 100%; /* Ensure images take up the full height */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border: 2px solid white; /* Added white border to images */
+  box-sizing: border-box; /* Ensure border is included in width and height */
+}
+
+.header-images img.active {
+  opacity: 1;
 }
 
 nav ul {
@@ -35,14 +61,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 160px); 
+  height: calc(100vh - 160px);
 }
 
 #content-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80%; 
+  width: 80%;
 }
 
 #left-content {
@@ -53,8 +79,8 @@ main {
 }
 
 #left-content iframe {
-  width: 500px; 
-  height: 300px; 
+  width: 500px;
+  height: 300px;
 }
 
 #buttons {
@@ -66,19 +92,22 @@ main {
 }
 
 .button {
-  background: rgb(48, 193, 255);
+  background: transparent; /* Remove background color */
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 1.5rem;
+  padding: 0; /* Remove padding */
   margin: 0.5rem 0;
-  text-align: center;
-  border-radius: 8px;
-  width: 200px; 
+  cursor: pointer; /* Add pointer cursor to indicate clickability */
+  margin-bottom: 10px; /* Add margin between buttons */
+  width: 200px; /* Set a specific width */
+  height: 50; /* Set a specific height */
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
 }
 
 .button:hover {
-  background: rgba(84, 255, 4, 0.956);
+  background: transparent; /* Remove background color on hover */
+  transform: scale(1.1); /* Increase size by 10% */
 }
 
 footer {
@@ -91,11 +120,10 @@ footer {
   bottom: 0;
 }
 
-
 @media (max-width: 768px) {
   main {
     flex-direction: column;
-    height: auto; 
+    height: auto;
     padding: 1rem;
   }
   
